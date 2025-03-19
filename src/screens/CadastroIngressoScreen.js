@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  View,
+  Alert,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  Alert,
-  StyleSheet,
+  View
 } from "react-native";
 import api from "../axios/axios";
 
@@ -58,10 +58,7 @@ export default function CadastroIngresso({ navigation }) {
       <TouchableOpacity onPress={handleIngresso} style={styles.button}>
         <Text style={styles.button}>Cadastrar</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Home")}
-        style={styles.button}
-      >
+      <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.button}>
         <Text style={styles.button}>Home</Text>
       </TouchableOpacity>
     </View>
@@ -84,12 +81,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "gray",
-    padding: 10,
+    backgroundColor: "black",
+    color: "white",
     borderRadius: 5,
-    alignItems: "center",
-    width: "100%",
-    width: 100,
+    margin: 10,
   },
   title: {
     fontSize: 25,

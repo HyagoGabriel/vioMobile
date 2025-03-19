@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  View,
+  Alert,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  Alert,
-  StyleSheet,
+  View,
 } from "react-native";
 import api from "../axios/axios";
 
@@ -30,21 +30,19 @@ export default function CadastroEvento({ navigation }) {
       }
     );
   }
-
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cadastro de Evento</Text>
+      <Text style={styles.title}>Faça Cadastro de um Evento</Text>
       <TextInput
-        placeholder="Nome do Evento"
+        placeholder="Nome"
         value={evento.nome}
         onChangeText={(value) => {
           setEvento({ ...evento, nome: value });
         }}
         style={styles.input}
       />
-
       <TextInput
-        placeholder="Descrição do Evento"
+        placeholder="Descrição"
         value={evento.descricao}
         onChangeText={(value) => {
           setEvento({ ...evento, descricao: value });
@@ -52,14 +50,13 @@ export default function CadastroEvento({ navigation }) {
         style={styles.input}
       />
       <TextInput
-        placeholder="Data Do Evento"
+        placeholder="Data e Hora"
         value={evento.data_hora}
         onChangeText={(value) => {
           setEvento({ ...evento, data_hora: value });
         }}
         style={styles.input}
       />
-
       <TextInput
         placeholder="Local"
         value={evento.local}
@@ -77,14 +74,13 @@ export default function CadastroEvento({ navigation }) {
         style={styles.input}
       />
       <TouchableOpacity onPress={handleEvento} style={styles.button}>
-        <Text style={styles.buttonText}>Cadastrar Evento</Text>
+        <Text style={styles.button}>Cadastrar</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.button} onPress={() => navigation.navigate("Home")}>
           Home
         </Text>
       </TouchableOpacity>
-
     </View>
   );
 }
@@ -103,11 +99,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
+    borderColor: "gray",
   },
   button: {
-    backgroundColor: "gray",
-
+    backgroundColor: "black",
+    color: "white",
     borderRadius: 5,
+    margin: 10,
   },
   title: {
     fontSize: 25,

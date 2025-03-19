@@ -1,28 +1,33 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("CadastroEvento")}
-      >
-        <Text style={styles.button}>Cadastro de Evento</Text>
+      <TouchableOpacity style={styles.button}
+      onPress={() => navigation.navigate("CadastroEvento")}>
+        <Text
+          style={styles.button}
+          
+        >
+          Cadastro de Eventos
+        </Text>
       </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("CadastroOrganizador")}
-      >
-        <Text style={styles.button}>Cadastro de Organizador</Text>
+      <TouchableOpacity style={styles.button}
+      onPress={() => navigation.navigate("CadastroIngresso")}>
+        <Text
+          style={styles.button}
+        >
+          Cadastro de Ingresso
+        </Text>
       </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("CadastroIngresso")}
-      >
-        <Text style={styles.button}>Cadastro de Ingresso</Text>
+      <TouchableOpacity style={styles.button}
+       onPress={() => navigation.navigate("CadastroOrganizador")}>
+        <Text
+          style={styles.button}
+         
+        >
+          Cadastro de Organizadores
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -37,14 +42,14 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   input: {
-   width: 200,
-   height: 40,
-   borderWidth: 1,
-   marginBottom: 20,
-   peddingHorizontal: 1,
+    width: 200,
+    height: 40,
+    borderWidth: 1,
+    marginBottom: 20,
+    paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "gray",
+    backgroundColor: "black",
     color: "white",
     borderRadius: 5,
     margin: 10,

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import api from "../axios/axios";
 
-export default function CadastroScreen({ navigation }) {
+export default function Cadastro({ navigation }) {
   const [user, setUser] = useState({
     name: "",
     cpf: "",
@@ -75,13 +75,11 @@ export default function CadastroScreen({ navigation }) {
         style={styles.input}
       />
       <TouchableOpacity onPress={handleCadastro} style={styles.button}>
-        <Text style={styles.button}>Entrar</Text>
+        <Text style={styles.button}>Cadastrar-se</Text>
       </TouchableOpacity>
-      <Button
-        title="Login"
-        onPress={() => navigation.navigate("Login")}
-        style={styles.button}
-      />
+      <TouchableOpacity onPress={() => navigation.navigate("Login")} style={styles.button}>
+        <Text style={styles.button}>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -102,7 +100,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "gray",
+    backgroundColor: "green",
+    color: "white",
+    borderRadius: 5,
+    margin: 10,
   },
   title: {
     fontSize: 25,

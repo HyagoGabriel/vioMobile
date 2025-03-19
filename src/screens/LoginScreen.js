@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   Alert,
   StyleSheet,
-  Button
+  Button,
 } from "react-native";
 import api from "../axios/axios";
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -49,11 +49,16 @@ export default function Login({navigation}) {
         style={styles.input}
       />
       <TouchableOpacity onPress={handleLogin} style={styles.button}>
-        
-        
-        <Text style={styles.buttonText}>Entrar</Text>
+        <Text style={styles.button}>Entrar</Text>
       </TouchableOpacity>
-      <Button title="Cadastro" onPress={() => navigation.navigate("Cadastro")}/>
+      <TouchableOpacity style={styles.button}>
+        <Text
+          style={styles.button}
+          onPress={() => navigation.navigate("Cadastro")}
+        >
+          Cadastre-se
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -74,12 +79,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "gray",
-    padding: 10,
+    backgroundColor: "green",
+    color: "white",
     borderRadius: 5,
-    alignItems: "center",
-    width: "100%",
-    width: 100,
+    margin: 10,
   },
   title: {
     fontSize: 25,
