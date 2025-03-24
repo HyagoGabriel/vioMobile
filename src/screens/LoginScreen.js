@@ -10,13 +10,17 @@ import {
 } from "react-native";
 import api from "../axios/axios";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Login({ navigation }) {
+export default function Login() {
+
   const [user, setUser] = useState({
     email: "",
     password: "",
     showPassword: false,
   });
+
+  const navigation = useNavigation();
 
   async function handleLogin() {
     await api.postLogin(user).then(
@@ -56,7 +60,11 @@ export default function Login({ navigation }) {
         <TouchableOpacity
           onPress={() => setUser({ ...user, showPassword: !user.showPassword })}
         >
-          <Ionicons name={user.showPassword?"eye-off":"eye"} size={24} color="gray" />
+          <Ionicons
+            name={user.showPassword ? "eye-off" : "eye"}
+            size={24}
+            color="gray"
+          />
         </TouchableOpacity>
       </View>
 
