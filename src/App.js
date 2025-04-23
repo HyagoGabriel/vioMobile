@@ -8,8 +8,6 @@ import CadastroEventoScreen from "./screens/CadastroEventoScreen";
 import CadastroOrganizadorScreen from "./screens/CadastroOrganizadorScreen";
 import CadastroIngressoScreen from "./screens/CadastroIngressoScreen";
 import Layout from "./components/Layout";
-import TaskList from "./screens/TaskList";
-import TaskDetail from "./screens/TaskDetail";
 import EventosScreen from "./screens/EventosScreen";
 
 const Stack = createStackNavigator();
@@ -17,46 +15,41 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{ headerShown: false }}>
-        <Stack.Screen name= "TaskList" 
-        component={TaskList}/>
-        <Stack.Screen name= "TaskDetail" 
-        component={TaskDetail}/>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
-          component={() => (
-            <Layout>
-              <LoginScreen />
-            </Layout>
-          )}
+          component={LoginScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Cadastro"
-          component={() => (
-            <Layout>
-              <CadastroScreen />
-            </Layout>
-          )}
+          component={CadastroScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Eventos"
-          component={() => (
-            <Layout>
-              <EventosScreen />
-            </Layout>
-          )}
+          component={EventosScreen}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="CadastroEvento" component={CadastroEventoScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CadastroEvento"
+          component={CadastroEventoScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="CadastroOrganizador"
           component={CadastroOrganizadorScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="CadastroIngresso"
           component={CadastroIngressoScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

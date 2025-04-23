@@ -27,7 +27,7 @@ export default function Login() {
       (response) => {
         console.log(response.data.message);
         Alert.alert("OK", response.data.message);
-        navigation.navigate("Home");
+        navigation.navigate("Eventos");
       },
       (error) => {
         Alert.alert("Erro", error.response.data.error);
@@ -68,7 +68,7 @@ export default function Login() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity onPress={handleLogin} style={styles.button}>
+      <TouchableOpacity onPress={()=>navigation.navigate("Eventos")} style={styles.button}>
         <Text style={styles.button}>Entrar</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
